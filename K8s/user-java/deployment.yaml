@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-java
+  labels:
+    app: user-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-java
+  template:
+    metadata:
+      labels:
+        app: user-java
+    spec:
+      containers:
+      - name: user-java
+        image: registrywjl7126.azurecr.io/user-java:0.0.1
+        ports:
+        - containerPort: 80
+        env:
+        - name: SQL_USER
+          value: sqladminwJl7126
+        - name: SQL_PASSWORD
+          value: TeamfourOH123
+        - name: SQL_DBNAME
+          value: mydrivingDB
+        - name: SQL_SERVER
+          value: "sqlserverwjl7126.database.windows.net"     
