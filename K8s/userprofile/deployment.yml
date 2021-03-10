@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userprofile
+  labels:
+    app: userprofile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: userprofile
+  template:
+    metadata:
+      labels:
+        app: userprofile
+    spec:
+      containers:
+      - name: userprofile
+        image: registrywjl7126.azurecr.io/userprofile:0.0.1
+        ports:
+        - containerPort: 80
+        env:
+        - name: SQL_USER
+          value: sqladminwJl7126
+        - name: SQL_PASSWORD
+          value: TeamfourOH123
+        - name: SQL_DBNAME
+          value: mydrivingDB
+        - name: SQL_SERVER
+          value: "sqlserverwjl7126.database.windows.net"        
+          
+
+
