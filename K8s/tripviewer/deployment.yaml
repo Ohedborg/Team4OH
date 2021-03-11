@@ -19,9 +19,10 @@ spec:
         image: registrywjl7126.azurecr.io/tripviewer:0.0.1
         ports:
         - containerPort: 80
+          name: http
         env:
         - name: TRIPS_API_ENDPOINT
-          value: "test"
+          value: "http://trips-svc.api.svc.cluster.local:80"
         - name: USERPROFILE_API_ENDPOINT
-          value: "test"
+          value: "http://userprofile-service.api.svc.cluster.local:80"
     

@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: tripviewer-svc
 spec:
-   selector:
-     app: tripviewer
-  - ports:
+  selector:
+    app: tripviewer
+  ports:
     - protocol: TCP
       port: 80
       targetPort: 80
