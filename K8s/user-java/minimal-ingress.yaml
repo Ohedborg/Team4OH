@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: user-java-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/user-java
+        pathType: Prefix
+        backend:
+          service:
+            name: user-java-svc
+            port:
+              number: 80
