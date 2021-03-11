@@ -1,0 +1,9 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: pod-deny-all
+spec:
+  podSelector:
+    matchLabels:
+      app: poi
+  ingress: []
