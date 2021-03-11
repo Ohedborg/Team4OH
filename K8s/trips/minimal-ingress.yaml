@@ -11,7 +11,7 @@ spec:
       - path: /api/trips
         pathType: Prefix
         backend:
-          service: trips 
-            name: trips
+          service:  
+            name: trips-svc
             port:
               number: 80
